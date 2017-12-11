@@ -9,7 +9,7 @@ public class Medidas {
 	
 	final static int DISPLAY_X = 0;
 	final static int DISPLAY_Y = 0;
-	final static int DISPLAY_ANCHO = VENTANA_ANCHO;
+	final static int DISPLAY_ANCHO = VENTANA_ANCHO - 6;
 	final static int DISPLAY_ALTO = 80;
 	
 	
