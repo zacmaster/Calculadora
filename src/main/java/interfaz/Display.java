@@ -7,6 +7,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 public class Display extends JTextField{
+	
 	private static final long serialVersionUID = 1L;
 	private String texto = "0";
 	
