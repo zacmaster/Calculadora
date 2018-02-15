@@ -5,14 +5,15 @@ import javax.swing.JButton;
 
 public class Botonera {
 	ArrayList<ArrayList<JButton>> botones = new ArrayList<ArrayList<JButton>>();
-	
+	private final int btn_ancho = Medidas.BOTON_ANCHO;
+	private final int btn_alto = Medidas.BOTON_ALTO;
 	
 	public Botonera() {
 		cargarArray();
 		cargarBotones();
 	}
 	private void cargarArray() {
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 5; i++) {
 			botones.add(new ArrayList<JButton>());
 		}
 		botones.get(0).add(new JButton("."));
@@ -35,15 +36,16 @@ public class Botonera {
 		botones.get(3).add(new JButton("x"));
 		botones.get(3).add(new JButton("/"));
 		
+		botones.get(4).add(new JButton("CE"));
 		
 		
 	}
 	
 	private void cargarBotones() {
 		
-		int distancia = Medidas.BOTONES_MARGEN;
+		int distancia = Medidas.BOTONES_MARGEN_VERTICAL;
 		int x = 0;
-		for (int i = 0; i < botones.size(); i++) {
+		for (int i = 0; i < 4; i++) {
 			int medidaBase = Medidas.BOTONERA_FILA1;
 			if(i == 0)x = Medidas.BOTONERA_COLUMNA1;
 			if(i == 1)x = Medidas.BOTONERA_COLUMNA2;
@@ -51,11 +53,12 @@ public class Botonera {
 			if(i == 3)x = Medidas.BOTONERA_COLUMNA4;
 			
 			for (int j = 0; j < 4; j++) {
-				botones.get(i).get(j).setBounds(x, medidaBase, Medidas.BOTON_ANCHO, Medidas.BOTON_ALTO);
+				botones.get(i).get(j).setBounds(x, medidaBase, btn_ancho, btn_alto);
 				
 				medidaBase -= distancia;
 			}
 		}
+		botones.get(4).get(0).setBounds(Medidas.BOTONERA_COLUMNA4, Medidas.BOTONERA_FILA4, btn_ancho, btn_alto);
 	}
 
 }
