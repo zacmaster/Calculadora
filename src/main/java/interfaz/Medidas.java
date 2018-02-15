@@ -25,7 +25,7 @@ public class Medidas {
 	final static int BOTONERA_Y_INFERIOR_IZQUIERDO = 350;
 	
 	final static int BOTONERA_FILA1 = VENTANA_ALTO - 100;
-	final static int BOTONERA_FILA4 = BOTONERA_FILA1 - BOTONERA_FILA1 * 4;
+	final static int BOTONERA_FILA5 = BOTONERA_FILA1 - BOTONES_MARGEN_VERTICAL * 4;
 	
 	
 	

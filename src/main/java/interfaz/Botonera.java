@@ -58,7 +58,8 @@ public class Botonera {
 				medidaBase -= distancia;
 			}
 		}
-		botones.get(4).get(0).setBounds(Medidas.BOTONERA_COLUMNA4, Medidas.BOTONERA_FILA4, btn_ancho, btn_alto);
+		System.out.println(Medidas.BOTONERA_FILA5);
+		botones.get(4).get(0).setBounds(Medidas.BOTONERA_COLUMNA4, Medidas.BOTONERA_FILA5, btn_ancho, btn_alto);
 	}
 
 }
