@@ -2,27 +2,10 @@ package interfaz;
 
 import java.util.ArrayList;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 
 public class Botonera {
 	ArrayList<ArrayList<JButton>> botones = new ArrayList<ArrayList<JButton>>();
 	
-//	private JButton bCero = new JButton("0");
-//	private JButton bUno = new JButton("1");
-//	private JButton bDos = new JButton("2");
-//	private JButton bTres = new JButton("3");
-//	private JButton bCuatro = new JButton("4");
-//	private JButton bCinco = new JButton("5");
-//	private JButton bSeis = new JButton("6");
-//	private JButton bSiete = new JButton("7");
-//	private JButton bOcho = new JButton("8");
-//	private JButton bNueve = new JButton("9");
-//	private JButton bSuma = new JButton("+");
-//	private JButton bResta = new JButton("-");
-//	private JButton bDivision = new JButton("/");
-//	private JButton bProducto = new JButton("*");
-//	private JButton bDecimal = new JButton(".");
-//	private JButton bIgual = new JButton("=");
 	
 	public Botonera() {
 		cargarArray();
@@ -57,17 +40,21 @@ public class Botonera {
 	}
 	
 	private void cargarBotones() {
-		int contadorColumnas = 0;
-		int contadorFilas = 0;
 		
-		int medidaBase = Medidas.BOTONERA_FILA1;
 		int distancia = Medidas.BOTONES_MARGEN;
-//		botones.get(0).get(0).setBounds(Medidas.BOTONERA_COLUMNA1, medidaBase, Medidas.BOTON_ANCHO, Medidas.BOTON_ALTO);
-//		botones.get(0).get(1).setBounds(Medidas.BOTONERA_COLUMNA1, medidaBase -  distancia, Medidas.BOTON_ANCHO, Medidas.BOTON_ALTO);
-		for (int j = 0; j < 4; j++) {
-			botones.get(0).get(j).setBounds(Medidas.BOTONERA_COLUMNA1, medidaBase, Medidas.BOTON_ANCHO, Medidas.BOTON_ALTO);
+		int x = 0;
+		for (int i = 0; i < botones.size(); i++) {
+			int medidaBase = Medidas.BOTONERA_FILA1;
+			if(i == 0)x = Medidas.BOTONERA_COLUMNA1;
+			if(i == 1)x = Medidas.BOTONERA_COLUMNA2;
+			if(i == 2)x = Medidas.BOTONERA_COLUMNA3;
+			if(i == 3)x = Medidas.BOTONERA_COLUMNA4;
 			
-			medidaBase -= distancia;
+			for (int j = 0; j < 4; j++) {
+				botones.get(i).get(j).setBounds(x, medidaBase, Medidas.BOTON_ANCHO, Medidas.BOTON_ALTO);
+				
+				medidaBase -= distancia;
+			}
 		}
 	}
 
