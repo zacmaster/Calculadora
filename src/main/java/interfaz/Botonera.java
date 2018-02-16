@@ -1,8 +1,13 @@
 package interfaz;
 
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import javax.swing.JButton;
 
+@SuppressWarnings("unused")
 public class Botonera {
 	ArrayList<ArrayList<JButton>> botones = new ArrayList<ArrayList<JButton>>();
 	private final int btn_ancho = Medidas.BOTON_ANCHO;
@@ -11,6 +16,7 @@ public class Botonera {
 	public Botonera() {
 		cargarArray();
 		cargarBotones();
+		cargarListeners();
 	}
 	private void cargarArray() {
 		for (int i = 0; i < 5; i++) {
@@ -61,5 +67,42 @@ public class Botonera {
 		System.out.println(Medidas.BOTONERA_FILA5);
 		botones.get(4).get(0).setBounds(Medidas.BOTONERA_COLUMNA4, Medidas.BOTONERA_FILA5, btn_ancho, btn_alto);
 	}
+	
+	private void cargarListeners() {
+		for (int i = 0; i < botones.size(); i++) {
+			for (int j = 0; j < botones.get(i).size(); j++) {
 
+				//				botones.get(i).get(j).addMouseListener(new MouseAdapter() {
+//					@Override
+//					public void mouseClicked(MouseEvent arg0) {
+//					
+//					}
+//				});
+//				botones.get(i).get(j).setfouse
+//				botones.get(i).get(j).setFocusable(true);
+				botones.get(i).get(j).addKeyListener(new KeyAdapter() {
+					@Override
+					public void keyReleased(KeyEvent arg0) {
+						controlarTecla(arg0);
+					}
+
+				});
+//				System.out.println(botones.get(i).get(j).getText());
+			}
+		}
+	}
+	private String texto(String s) {
+		return s;
+	}
+	private void controlarTecla(KeyEvent arg0) {
+		switch (arg0.getKeyChar()) {
+			case '1':
+				System.out.println('1');
+				break;
+			case '2':
+				System.out.println('2');
+				break;
+		}
+			
+	}
 }
